@@ -1,0 +1,24 @@
+{
+  "name": "reactVotingApp",
+  "version": "1.0.0",
+  "author": "Rodrigo Oler",
+  "dependencies": {
+    "semantic-ui": "git://github.com/Semantic-Org/Semantic-UI.git#27d58a01793b66318478fbc5b6676804d22d065d"
+  },
+  "devDependencies": {
+    "concurrently": "2.2.0",
+    "live-server": "git://github.com/acco/live-server.git"
+  },
+  "private": false,
+  "scripts": {
+    "e2e": "nightwatch",
+    "go": "open http://localhost:3000; npm run server",
+    "server": "live-server public --host=localhost --port=3000 --middleware=./disable-browser-cache.js",
+    "start": "npm run server",
+    "test": "./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'"
+  },
+  "description": "React App Example",
+  "main": "index.js",
+  "repository": "https://github.com/rodrigooler/react-voting-app.git",
+  "license": "MIT"
+}
